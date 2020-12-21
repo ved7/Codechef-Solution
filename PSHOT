@@ -1,0 +1,57 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	
+	int t;
+	cin>>t;
+	
+	while(t--)
+	{
+	    int n;
+	    cin>>n;
+	    
+	    string str;
+	    cin>>str;
+	    
+	    //chance of a : ca
+	    // chances of b : cb
+	    int ca = n;
+	    int cb = n;
+	    
+	    //total goals by a: goala
+	    //total goals by b : goalb
+	    int goala = 0; 
+	    int goalb = 0;
+	   int i;
+	    for( i = 0 ; i<2*n ; i++)
+	    {
+	        if(i%2==0)
+	        {
+	          goala = goala + (str[i]-'0'); 
+	          ca--;
+	        }
+	        else
+	        {
+	           
+	          goalb = goalb + (str[i]-'0'); 
+	          cb--; 
+	        }
+	        
+	        if(goala>goalb+cb)
+	          {
+	
+	               cout<<i+1<<"\n";
+	               break;
+	          }
+	        else if(goalb>goala+ca)
+	          {
+	              cout<<i+1<<"\n";
+	              break;
+	          }  
+	    }
+	   if(i==2*n)
+	    cout<<2*n<<"\n";
+	}
+	return 0;
+}
