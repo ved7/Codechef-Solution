@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int t;
+	cin>>t;
+	while(t--)
+	{
+	    int n;
+	    cin>>n;
+	    int s[n],v[n],p[n];
+	    
+	    for(int i = 0 ; i<n ; i++)
+	    {
+	        cin>>s[i]>>p[i]>>v[i];
+	    }
+	    int res = 0;
+	     for(int i = 0 ; i<n ; i++)
+	    {
+	     int temp = (p[i]/(s[i]+1)) * v[i];
+	       res = max(res,temp);
+	    }
+	  cout<<res;  
+	  cout<<"\n";
+	}
+	return 0;
+}
