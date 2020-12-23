@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int t;
+    cin>>t;
+    
+    while(t--)
+    {
+        int n;
+        cin>>n;
+        int mv = INT_MAX;   
+        long long int res = 0;
+        int s[n+1];
+        for(int i = 0 ; i< n; i++)
+           {
+               cin>>s[i];
+               mv = min(mv , s[i]);    //dont consider the value of l, ques only demand you to store min value in res until you find another value 
+                                       //  eg . max. capacity array is : 3 4 5 8 6 2 3 1 2
+                                                //so initialise res = res + min_value;
+                                                //therefore res = add (3, 3, 3, 3, 3, 2, 2, 1 ,1)  
+               res = res+mv;
+           }   
+           
+           cout<<res<<endl;      
+     }       
+   return 0;
+}
